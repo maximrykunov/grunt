@@ -1,8 +1,8 @@
 class ContactMailer < ApplicationMailer
-  default from: 'teplicy@medalak.ru'
+  default from: 'info@84962180218.ru'
  
   def call_back_mail(contact)
     @contact = contact
-    mail(to: 'teplicy@medalak.ru', subject: 'Обратный звонок')
+    mail(to: 'info@84962180218.ru', subject: 'Обратный звонок')
   end
 end

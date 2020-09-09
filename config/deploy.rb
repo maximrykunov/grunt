@@ -2,8 +2,8 @@
 # server '178.62.132.38', roles: [:web, :app, :db], primary: true
 server '89.223.88.61', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:maximrykunov/tepl.git'
-set :application,     'tepl'
+set :repo_url,        'git@github.com:maximrykunov/grunt.git'
+set :application,     'grunt'
 set :user,            'deploy'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0

@@ -1,4 +1,4 @@
-class CreateProductPrices < ActiveRecord::Migration
+class CreateProductPrices < ActiveRecord::Migration[5.1]
   def change
     create_table :product_prices do |t|
       t.references :product, index: true

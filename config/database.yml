@@ -16,7 +16,7 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: tepl_development
+  database: grunt_development
   pool:     5
   username: postgres
   password: password
@@ -44,7 +44,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: tepl_test<%= ENV['TEST_ENV_NUMBER'] %>
+  database: grunt_test<%= ENV['TEST_ENV_NUMBER'] %>
   pool:     5
   username: postgres
   password: password
@@ -54,7 +54,7 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: tepl_production
+  database: grunt_production
   pool:     5
   username: tepl
   password: password

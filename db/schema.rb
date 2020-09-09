@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
     t.text "body"
     t.string "resource_id", null: false
     t.string "resource_type", null: false
-    t.integer "author_id"
     t.string "author_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.integer "product_id"
+    t.bigint "product_id"
     t.string "system_name"
     t.string "title"
     t.boolean "visible", default: false
@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.integer "imageable_id"
     t.string "imageable_type"
+    t.bigint "imageable_id"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
 
   create_table "manuals", force: :cascade do |t|
     t.string "name"
-    t.integer "product_id"
+    t.bigint "product_id"
     t.integer "manual_type"
     t.string "url"
     t.boolean "visible"
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
   end
 
   create_table "product_prices", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "sheet_id"
+    t.bigint "product_id"
+    t.bigint "sheet_id"
     t.integer "extend_count"
     t.integer "price"
     t.datetime "created_at", null: false
@@ -174,9 +174,9 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
     t.integer "div_price"
     t.integer "div_cost"
     t.integer "min_sheet_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
     t.text "add_desc"
     t.text "meta_keywords"
     t.text "meta_description"

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     sub_domain = request.subdomain
     # Временно пока нет остновного лендинга
-    sub_domain = 'teplicy' if sub_domain.empty?
+    sub_domain = '' if sub_domain.empty?
     p "====#{sub_domain}"
     @current_app ||= App.find_by(sub_domain: sub_domain)
   end

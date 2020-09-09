@@ -2,13 +2,11 @@ header
   .container
     .brand
       span.brand_name
-        = link_to current_app.name, '/'
-      p.brand_slogan
-        noindex
-          a href="http://medalak.ru" target="_blank" rel="nofollow" title="Медалак" Медалак
-    / a.fa-phone href="tel:+79268631108"  (926)863-11-08
-    / a.fa-phone href="tel:+79854599713"  (985)459-97-13
-    a.fa-phone href="tel:+79250205481"  (925)020-54-81
+        = link_to 'ЛидерСтрой', '/'
+      / p.brand_slogan
+      /   noindex
+      /     a href="http://84962180218.ru" target="_blank" rel="nofollow" title="ЛидерСтрой" ЛидерСтрой
+    a.fa-phone href="tel:+74962180218"  (496)218-02-18
     p Просто позвоните, и мы ответим на все ваши вопросы
   #stuck_container.stuck_container
     .container
@@ -30,13 +28,9 @@ header
                     = link_to 'Гарантии качества', '/warranty'
                 li
                   = link_to 'Дополнительная информация', '/articles'
-          - if current_app.teplicy?
-            li
-              = link_to 'Доставка и оплата', '/dostavka'
-            li
-              = link_to 'Гарантия', '/warranty'
-          - if current_app.drenaj?
-            li
-              = link_to 'Дренажные трубы', '/drenazhnye-truby', title: 'Дренажные гофрированные трубы'
+          li
+            = link_to 'Доставка и оплата', '/dostavka'
+          li
+            = link_to 'Гарантия', '/warranty'
           li
             = link_to 'Контакты', '/contacts'

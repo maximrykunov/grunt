@@ -6,10 +6,7 @@ class CreateApps < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    App.where(sub_domain: '', name: 'Медалак').first_or_create
-    App.where(sub_domain: 'teplicy', name: 'Теплицы').first_or_create
-    App.where(sub_domain: 'teplo', name: 'Тепло').first_or_create
-    App.where(sub_domain: 'drenaj', name: 'Дренаж').first_or_create
+    App.where(sub_domain: '', name: 'ЛидерСтрой').first_or_create
   end
 
   def self.down

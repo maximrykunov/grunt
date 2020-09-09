@@ -343,7 +343,7 @@ var fields, fieldType, f, required, selects, data='', selectData='';
 			}
 		});
 
-		// $.post('http://medalak.ru/callme/lib/send.php', { 
+		// $.post('http://84962180218.ru/callme/lib/send.php', { 
 		// 	cs: cs,
 		// 	os: os,
 		// 	ctime: cnt,

@@ -5,5 +5,5 @@
 # Disallow: /
 
 User-agent: *
-Host: medalak.ru
-sitemap: http://medalak.ru/sitemap.xml
+Host: 84962180218.ru
+sitemap: http://84962180218.ru/sitemap.xml
