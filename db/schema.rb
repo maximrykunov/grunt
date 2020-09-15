@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_074334) do
+ActiveRecord::Schema.define(version: 2020_09_15_151722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,13 +46,6 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "apps", force: :cascade do |t|
-    t.string "name"
-    t.string "sub_domain"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "articles", force: :cascade do |t|
     t.bigint "product_id"
     t.string "system_name"
@@ -63,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "app_id"
     t.index ["product_id"], name: "index_articles_on_product_id"
   end
 
@@ -76,7 +68,8 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
     t.integer "position", default: 100
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "app_id"
+    t.text "meta_keywords"
+    t.text "meta_description"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -131,7 +124,6 @@ ActiveRecord::Schema.define(version: 2019_02_17_074334) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "app_id"
   end
 
   create_table "product_prices", force: :cascade do |t|

@@ -14,15 +14,13 @@
 
 class PagesController < ApplicationController
   def index
-    @category_1 = Category.find_by(system_name: 'teplicy_volya_profil', app: current_app)
-    @category_2 = Category.find_by(system_name: 'teplicy_volya_truba', app: current_app)
-    @articles = current_app.articles.active
-
-    render "pages/#{current_app.sub_domain}/index"
+    @category_1 = Category.find_by(system_name: 'teplicy_volya_profil')
+    @category_2 = Category.find_by(system_name: 'teplicy_volya_truba')
+    @articles = Article.active
   end
 
   def show
-    @page = current_app.pages.friendly.find(params[:id])
+    @page = Page.friendly.find(params[:id])
     @title = "#{@page.title.gsub('"','')}."
     @meta_keywords = "#{@page.meta_keywords.gsub('"','')}, #{APP_CONFIG['meta_keywords_tail']}"
     @meta_description = "#{@page.meta_description.gsub('"','')} #{APP_CONFIG['meta_description_tail']}"

@@ -18,8 +18,8 @@ class CategoriesController < ApplicationController
     @category = Category.from_param(params[:id])
     if @category
       @title = "#{@category.name.gsub('"','')}. #{APP_CONFIG['default_title_tail']}"
-      @meta_keywords = "#{@category.name.gsub('"','')}, #{APP_CONFIG['meta_keywords_tail']}"
-      @meta_description = "#{@category.name.gsub('"','')} #{APP_CONFIG['meta_description_tail']}"
+      @meta_keywords = @category.meta_keywords || "#{@category.name.gsub('"','')}, #{APP_CONFIG['meta_keywords_tail']}"
+      @meta_description = @category.meta_description || "#{@category.name.gsub('"','')} #{APP_CONFIG['meta_description_tail']}"
     end
     render '/shared/404', :status => 404 if @category.nil?
   end

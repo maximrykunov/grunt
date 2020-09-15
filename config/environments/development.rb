@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  ENV['ADMIN_PASSWORD'] = '1qa@WS3ed'
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 

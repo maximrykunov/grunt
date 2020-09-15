@@ -16,8 +16,6 @@ class Page < ApplicationRecord
   extend FriendlyId
   friendly_id :system_name
 
-  belongs_to :app, inverse_of: :pages
-
   # def self.from_param(param)
   #   find_by_system_name(param)
   # end
