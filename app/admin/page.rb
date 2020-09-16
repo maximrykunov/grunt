@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
 
-  permit_params :system_name, :title, :meta_keywords, :meta_description, :content
+  permit_params :system_name, :title, :meta_keywords, :meta_description, :content, :visible, :show_in_menu, :position
 
   controller do
     def find_resource
@@ -22,6 +22,9 @@ ActiveAdmin.register Page do
       f.input :system_name
       f.input :meta_keywords, :input_html => { :rows => 3 }
       f.input :meta_description, :input_html => { :rows => 3 }
+      f.input :visible
+      f.input :show_in_menu, title: 'fuck'
+      f.input :position
       f.input :content, as: :ckeditor
     end
 

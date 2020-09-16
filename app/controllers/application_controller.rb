@@ -7,5 +7,6 @@ class ApplicationController < ActionController::Base
 
   def get_header_info
     @top_categories = Category.where(parent_id: nil).visible.ordered
+    @top_pages = Page.where(show_in_menu: true).visible.ordered
   end
 end

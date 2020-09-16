@@ -16,6 +16,9 @@ class Page < ApplicationRecord
   extend FriendlyId
   friendly_id :system_name
 
+  scope :ordered, -> { order(:position) }
+  scope :visible, -> { where(visible: true) }
+
   # def self.from_param(param)
   #   find_by_system_name(param)
   # end
