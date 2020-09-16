@@ -1133,7 +1133,7 @@ table tr:nth-child(even) {
 }
 /*==================  Stuck menu  ======================*/
 .stuck_container {
-  margin-top: 22px;
+  margin-top: 2px;
   background: #434547;
 }
 
