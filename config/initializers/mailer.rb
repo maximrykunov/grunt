@@ -1,10 +1,10 @@
 ActionMailer::Base.delivery_method = :smtp
 
 ActionMailer::Base.smtp_settings = {
-  :address => "smtp.yandex.ru",
-  :port => 587,
+  :address => "smtp.mail.ru",
+  :port => 465,
   :domain => '84962180218.ru',
   :authentication => :plain,
-  :user_name => 'info@84962180218.ru',
+  :user_name => 'liderstroy-dubna@mail.ru',
   :password => ENV['MAIL_PASSWORD']
 }

@@ -6,7 +6,7 @@
 main.mobile-center
   section.well1.ins3
     .container
-      h2 Оставить заявку на "#{@product.name}"
+      h2 Оставить заявку на обратный звонок
       = form_for(@contact) do |f| 
 
         - if @contact.errors.any?
@@ -29,38 +29,6 @@ main.mobile-center
               = f.label :phone
             td
               = f.text_field :phone
-          tr
-            td
-              | Теплица
-            td
-              = @product.name
-              - if @length
-                = " #{@product.length.split(', ')[@length]} м"
-              - if @sheet
-                = " ( Каркас + поликарбонат #{@sheet.short_name} )"
-              - else
-                | ( Каркас )
-          tr
-            td
-              | Цена
-            td
-              - if @sheet
-                = "#{@product.full_product_price(@length, @sheet, discount)} рублей"
-              - else
-                = "#{@product.full_base_price(@length, discount)} рублей"
-              - if discount > 0
-                br
-                | со скидкой #{discount}% на каркас
-          tr
-            td
-              | Установка
-              sup *
-              br/
-              | (по желанию)
-            td
-              = check_box_tag 'install', '1', @install == 1
-              br
-              = "#{@product.full_install_price(@length)} рублей"
           tr
             td
               = f.label :message

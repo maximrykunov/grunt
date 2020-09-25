@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   get 'pages/market' => 'pages#market'
   resources :pages, path: '', only: :show
-  resources :contacts
+  resources :contacts, path: :call_back
 
   # Example of regular route:
   get 'products/:id/:option' => 'products#detail', as: :product_detail

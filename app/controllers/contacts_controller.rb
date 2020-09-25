@@ -20,7 +20,6 @@ class ContactsController < ApplicationController
   def new
     params[:o] ||= '0-0-0-0'
     @contact = Contact.new(contact_type: 'order', option: params[:o])
-    load_options
     if @product
       @title = "#{@product.name} - оставить заявку. #{APP_CONFIG['default_title_tail']}"
       @meta_keywords = "#{@product.name}, #{APP_CONFIG['meta_keywords_tail']}"
@@ -35,7 +34,6 @@ class ContactsController < ApplicationController
       if @contact.save
         send_email
       else
-        load_options
         render :new
       end
     else
@@ -76,14 +74,5 @@ class ContactsController < ApplicationController
       new_params[:contact_type] = params["os"][i] if v.strip == 'contact_type'
     end
     new_params
-  end
-
-  def load_options
-    options = @contact.option.split('-')
-
-    @product = Product.find_by(id: options[0]) || Product.first
-    @sheet = Sheet.find_by(id: options[1])
-    @length = options[2].to_i
-    @install = options[3].to_i
   end
 end
