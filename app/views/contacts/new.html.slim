@@ -38,3 +38,9 @@ main.mobile-center
             td
             td
               = f.submit 'Оставить заявку'
+
+javascript:
+  var cleave = new Cleave('#contact_phone', {
+      phone: true,
+      phoneRegionCode: 'ru'
+  });

@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
 //= require fancybox
 //= require ckeditor/init
 //= require ckeditor/config
-//= require_tree .
-
+//= require cleave
+//= require cleave-phone.ru.js

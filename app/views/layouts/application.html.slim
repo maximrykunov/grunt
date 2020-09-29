@@ -6,6 +6,7 @@ html lang="ru"
     meta name='description' content= meta_description 
     meta charset="utf-8" /
     meta content="telephone=no" name="format-detection" /
+    = javascript_include_tag "application"
     = favicon_link_tag
     = stylesheet_link_tag "application"
     = javascript_include_tag "https://vk.com/js/api/share.js?94"
@@ -14,4 +15,3 @@ html lang="ru"
       = render partial: 'layouts/header'
       = yield
       = render partial: 'layouts/footer'
-    = javascript_include_tag "application"
